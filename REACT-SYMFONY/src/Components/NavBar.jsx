@@ -1,12 +1,6 @@
 import React from "react";
 import DarkMode from "../Components/DarkMode";
-import {
-  Box,
-  Flex,
-  Spacer,
-  useColorModeValue,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Flex, Spacer, useColorModeValue, Button } from "@chakra-ui/react";
 
 export default function NavBar() {
   const bgColor = useColorModeValue("yellow.400", "cyan.700");
@@ -41,7 +35,7 @@ export default function NavBar() {
           mb={{ base: "10px", md: "0" }}
           width="auto"
           variant="unstyled"
-          marginRight="30px" 
+          marginRight="30px"
         >
           Inicio
         </Button>
@@ -52,7 +46,7 @@ export default function NavBar() {
           mb={{ base: "10px", md: "0" }}
           width="auto"
           variant="unstyled"
-          marginRight="30px" 
+          marginRight="30px"
         >
           Configuración
         </Button>
@@ -63,7 +57,7 @@ export default function NavBar() {
           mb={{ base: "10px", md: "0" }}
           width="auto"
           variant="unstyled"
-          marginRight="30px" 
+          marginRight="30px"
         >
           Integración
         </Button>
@@ -74,7 +68,7 @@ export default function NavBar() {
           mb={{ base: "10px", md: "0" }}
           width="auto"
           variant="unstyled"
-          marginRight="30px" 
+          marginRight="30px"
         >
           Cors y Seguridad
         </Button>
@@ -85,7 +79,7 @@ export default function NavBar() {
           mb={{ base: "10px", md: "0" }}
           width="auto"
           variant="unstyled"
-          marginRight="30px" 
+          marginRight="30px"
         >
           Webpack
         </Button>
@@ -95,5 +89,3 @@ export default function NavBar() {
     </Box>
   );
 }
-
-

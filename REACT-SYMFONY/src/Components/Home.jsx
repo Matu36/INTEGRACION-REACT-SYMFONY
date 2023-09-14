@@ -101,7 +101,8 @@ export default function Home() {
           border="6px solid"
           borderColor="cyan.700"
           p={8}
-          w={440}
+          maxW={{ base: "100%", md: "440px" }}
+          width="60%"
           textAlign="left"
           marginLeft="6rem"
         >
