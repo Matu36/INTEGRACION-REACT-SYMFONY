@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import { Text, Box, Image, Flex } from "@chakra-ui/react";
-
+import CustomText from "./CustomText";
 
 export default function Home() {
   return (
@@ -86,27 +86,212 @@ export default function Home() {
           Configuración Inicial
         </Text>
         <br />
-        <Text
-          marginLeft={{ base: 5, md: "100px" }}
-          textAlign="justify"
-          maxWidth="1000px"
-          fontWeight="bold"
-          fontSize={{ base: "16px", md: "18px" }}
-          w={{ base: "100%", md: "auto" }}
-          width={{ base: "90%", md: "auto" }}
+        <div>
+          <CustomText>
+            Lo primero que debemos hacer es descargar nuestro proyecto de
+            Symfony; una vez descargado, a los paquetes habituales debemos
+            instalar lo siguiente: composer require nelmio/cors-bundle:^2.3;
+            Esto nos intalara el paquete "nelmio/cors-bundle": "^2.3", que nos
+            va evitar los problemas de CORS y poder configurar la seguridad.
+            Para esto, una vez que instalamos nelmio, nuestro archivo
+            nelmio_cors.yaml (dentro de packages) debería quedar asi:
+          </CustomText>
+        </div>
+        <br />
+
+        <Box
+          border="6px solid"
+          borderColor="cyan.700"
+          p={8}
+          w={440}
+          textAlign="left"
+          marginLeft="6rem"
         >
-         Lo primero que debemos hacer es descargar nuestro proyecto de Symfony; una vez descargado, a los paquetes habituales tenemos debemos instalar lo siguiente:
-         composer require nelmio/cors-bundle:^2.3; Esto nos intalara el paquete "nelmio/cors-bundle": "^2.3", que nos va evitar los problemas de CORS y poder configurar la seguridad.
-         Para esto, una vez que instalamos nelmio, nuestro archivo nelmio_cors.yaml (dentro de packages) debería quedar asi:
-         nelmio_cors:
-  defaults:
-    allow_credentials: true
-    allow_origin: [ '*' ]
-    allow_headers: [ '*' ]
-    allow_methods: [ 'GET', 'POST', 'PUT', 'DELETE' ]
+          <Text fontSize="m" fontWeight="bold">
+            nelmio_cors:
+          </Text>
+          <Text fontSize="m" fontWeight="bold">
+            defaults:
+          </Text>
+          <Text fontSize="m" fontWeight="bold">
+            allow_credentials: true
+          </Text>
+          <Text fontSize="m" fontWeight="bold">
+            allow_origin: [ '*' ]
+          </Text>
+          <Text fontSize="m" fontWeight="bold">
+            allow_headers: [ '*' ]
+          </Text>
+          <Text fontSize="m" fontWeight="bold">
+            allow_methods: [ 'GET', 'POST', 'PUT', 'DELETE' ]
+          </Text>
+        </Box>
+        <br />
+
+        <div>
+          <CustomText>
+            <Text fontSize="m" fontWeight="bold">
+              Luego de configurar Nelmio, debemos instalar WEBPACK ENCORE de
+              esta forma:
+            </Text>
+            <br />
+            <Text fontSize="m" fontWeight="bold">
+              composer require symfony/webpack-encore-bundle
+            </Text>
+            <br />
+            <Text fontSize="m" fontWeight="bold">
+              Posteriormente, creamos un controlador para renderizar los
+              componentes{" "}
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              (es decir, en este controlador vamos a renderizar el punto de
+              entrada de nuestra app, ya se app.js o main.jsx, etc).{" "}
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              php bin/console make:controller DefaultController
+              <br />
+              <br />
+              <br />
+              <Text fontSize="xl" fontWeight="bold" textDecoration="underline">
+                {" "}
+                EJEMPLOS:{" "}
+              </Text>
+              <br />
+              <Text fontSize="m" fontWeight="bold"></Text>class
+              DefaultController extends AbstractController
+            </Text>
+
+            <Text fontSize="m" fontWeight="bold">
+              {" "}
+              /**
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              {" "}
+              * @Route ("/reactRouting", name="home", defaults="reactRouting":
+              null )
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              {" "}
+              */
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              {" "}
+              public function index()
+            </Text>
+
+            <Text fontSize="m" fontWeight="bold">
+              {" "}
+              return $this- render ('default/index.html.twig');
+            </Text>
+
+            <Text fontSize="m" fontWeight="bold">
+              Aclaración: reactRouting va entre llaves; "reactRouting": null va
+              entre llaves;{" "}
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              El resto es como cualquier controlador de symfony (se omiten las
+              llaves ya que React no permite comentar código PHP){" "}
+            </Text>
+<br />
+<br />
+            <Text textDecoration="underline" fontSize="22px">
+              Así debemos hacer todas las rutas que tengamos en nuestro proyecto; quedaría de esta forma:
+            </Text>
+        
+            <br />
 
 
-        </Text>
+            <Text>
+
+              
+            /**
+         * @Route("/reactRouting", name="app_home", defaults="reactRouting": null)
+         */
+        public function home($reactRouting): Response
+        
+            return $this-render('default/home.html.twig');
+            </Text>
+<br />
+
+            <Text>
+
+        /**
+         * @Route("/agentes/reactRouting", name="app_agentes", defaults="reactRouting": null)
+         */
+        public function agentes($reactRouting): Response
+        
+            return $this-render('default/home.html.twig');
+        
+            </Text>
+<br />
+
+            <Text>
+        /**
+         * @Route("/agentes/agente/reactRouting", name="app_detalle_agentes", defaults="reactRouting": null)
+         */
+        public function detalle_agentes($reactRouting): Response
+        
+            return $this-render('default/home.html.twig');
+        
+            </Text>
+<br />
+
+            <Text>
+        /**
+         * @Route("/operativos/reactRouting", name="app_operativos", defaults="reactRouting": null)
+         */
+        public function operativo(): Response
+        
+            return $this-render('default/home.html.twig');
+        
+            </Text>
+<br />
+
+            <Text>
+        /**
+         * @Route("/honorarios/reactRouting", name="app_honorarios", defaults="reactRouting": null)
+         */
+        public function honorario(): Response
+        
+            return $this-render('default/home.html.twig');
+        
+            </Text>
+<br />
+
+            <Text>
+        /**
+         * @Route("/modulos/reactRouting", name="app_modulos", defaults="reactRouting": null)
+         */
+        public function modulo(): Response
+        
+            return $this-render('default/home.html.twig');
+            </Text>
+<br />
+
+            <Text>
+
+        /**
+         * @Route("/ordenes/reactRouting", name="app_ordenes", defaults="reactRouting": null)
+         */
+        public function ordenes(): Response
+        
+            return $this-render('default/home.html.twig');
+            </Text>
+<br />
+
+            <Text>
+        /**
+         * @Route("/ordenes/ver-ordenes/reactRouting", name="app_ver_ordenes", defaults="reactRouting": null)
+         */
+        public function verOrdenes(): Response
+        
+            return $this-render('default/home.html.twig');
+            </Text>
+
+
+            </CustomText>
+         
+        </div>
       </Box>
       <br />
       <br />
