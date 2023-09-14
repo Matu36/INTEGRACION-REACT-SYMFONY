@@ -19,7 +19,7 @@ export default function Home() {
         margin="30px"
       >
         <Text
-          marginTop={{ base: "30px", md: "0" }}
+          marginTop={{ base: "100px", md: "40px" }}
           fontSize={{ base: "50px", md: "70px" }}
           fontWeight="extrabold"
         >
@@ -73,8 +73,6 @@ export default function Home() {
       ></Flex>
 
       <br />
-      <br />
-      <br />
       <Box id="Configuracion-inicial">
         <Text
           fontSize="50px"
@@ -83,7 +81,7 @@ export default function Home() {
           textDecoration="underline"
           textDecorationColor="cyan.700"
         >
-          Configuración Inicial
+          Configuración
         </Text>
         <br />
         <div>
@@ -192,136 +190,81 @@ export default function Home() {
               El resto es como cualquier controlador de symfony (se omiten las
               llaves ya que React no permite comentar código PHP){" "}
             </Text>
-<br />
-<br />
+            <br />
+            <br />
             <Text textDecoration="underline" fontSize="22px">
-              Así debemos hacer todas las rutas que tengamos en nuestro proyecto; quedaría de esta forma:
+              Así debemos hacer todas las rutas que tengamos en nuestro
+              proyecto; quedaría de esta forma:
             </Text>
-        
+
             <br />
 
+            <Text>
+              /** * @Route("/reactRouting", name="app_home",
+              defaults="reactRouting": null) */ public function
+              home($reactRouting): Response return
+              $this-render('default/home.html.twig');
+            </Text>
+            <br />
 
             <Text>
-
-              
-            /**
-         * @Route("/reactRouting", name="app_home", defaults="reactRouting": null)
-         */
-        public function home($reactRouting): Response
-        
-            return $this-render('default/home.html.twig');
+              /** * @Route("/agentes/reactRouting", name="app_agentes",
+              defaults="reactRouting": null) */ public function
+              agentes($reactRouting): Response return
+              $this-render('default/home.html.twig');
             </Text>
-<br />
+            <br />
 
             <Text>
-
-        /**
-         * @Route("/agentes/reactRouting", name="app_agentes", defaults="reactRouting": null)
-         */
-        public function agentes($reactRouting): Response
-        
-            return $this-render('default/home.html.twig');
-        
+              /** * @Route("/agentes/agente/reactRouting",
+              name="app_detalle_agentes", defaults="reactRouting": null) */
+              public function detalle_agentes($reactRouting): Response return
+              $this-render('default/home.html.twig');
             </Text>
-<br />
+            <br />
 
             <Text>
-        /**
-         * @Route("/agentes/agente/reactRouting", name="app_detalle_agentes", defaults="reactRouting": null)
-         */
-        public function detalle_agentes($reactRouting): Response
-        
-            return $this-render('default/home.html.twig');
-        
+              /** * @Route("/operativos/reactRouting", name="app_operativos",
+              defaults="reactRouting": null) */ public function operativo():
+              Response return $this-render('default/home.html.twig');
             </Text>
-<br />
+            <br />
 
             <Text>
-        /**
-         * @Route("/operativos/reactRouting", name="app_operativos", defaults="reactRouting": null)
-         */
-        public function operativo(): Response
-        
-            return $this-render('default/home.html.twig');
-        
+              /** * @Route("/honorarios/reactRouting", name="app_honorarios",
+              defaults="reactRouting": null) */ public function honorario():
+              Response return $this-render('default/home.html.twig');
             </Text>
-<br />
+            <br />
 
             <Text>
-        /**
-         * @Route("/honorarios/reactRouting", name="app_honorarios", defaults="reactRouting": null)
-         */
-        public function honorario(): Response
-        
-            return $this-render('default/home.html.twig');
-        
+              /** * @Route("/modulos/reactRouting", name="app_modulos",
+              defaults="reactRouting": null) */ public function modulo():
+              Response return $this-render('default/home.html.twig');
             </Text>
-<br />
+            <br />
 
             <Text>
-        /**
-         * @Route("/modulos/reactRouting", name="app_modulos", defaults="reactRouting": null)
-         */
-        public function modulo(): Response
-        
-            return $this-render('default/home.html.twig');
+              /** * @Route("/ordenes/reactRouting", name="app_ordenes",
+              defaults="reactRouting": null) */ public function ordenes():
+              Response return $this-render('default/home.html.twig');
             </Text>
-<br />
+            <br />
 
             <Text>
-
-        /**
-         * @Route("/ordenes/reactRouting", name="app_ordenes", defaults="reactRouting": null)
-         */
-        public function ordenes(): Response
-        
-            return $this-render('default/home.html.twig');
+              /** * @Route("/ordenes/ver-ordenes/reactRouting",
+              name="app_ver_ordenes", defaults="reactRouting": null) */ public
+              function verOrdenes(): Response return
+              $this-render('default/home.html.twig');
             </Text>
-<br />
-
-            <Text>
-        /**
-         * @Route("/ordenes/ver-ordenes/reactRouting", name="app_ver_ordenes", defaults="reactRouting": null)
-         */
-        public function verOrdenes(): Response
-        
-            return $this-render('default/home.html.twig');
-            </Text>
-
-
-            </CustomText>
-         
+          </CustomText>
         </div>
       </Box>
       <br />
       <br />
       <br />
 
-      <Box id="API-FRONT">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "100px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
-        >
-          SYMFONY API - REACT FRONT
-        </Text>
-        <Text
-          fontSize="22px"
-          fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{ base: 5, md: "100px" }}
-        >
-          Formas de uso de ambas tecnologías
-        </Text>
-        <br />
-        <br />
-
-        <br />
-        <br />
-      </Box>
-      <Box id="Integracion">
+      <Box id="integracion">
         <Text
           fontSize="50px"
           marginLeft={{ base: 5, md: "100px" }}
@@ -337,15 +280,15 @@ export default function Home() {
           color="yellow.300"
           marginLeft={{ base: 5, md: "100px" }}
         >
-          Integrando ambas tecnologías
+          Formas de uso de ambas tecnologías
         </Text>
         <br />
         <br />
-      </Box>
 
-      <br />
-      <br />
-      <Box id="Seguridad">
+        <br />
+        <br />
+      </Box>
+      <Box id="corsyseguridad">
         <Text
           fontSize="50px"
           marginLeft={{ base: 5, md: "100px" }}
@@ -353,7 +296,39 @@ export default function Home() {
           textDecoration="underline"
           textDecorationColor="cyan.700"
         >
-          Seguridad
+          Cors y Seguridad
+        </Text>
+        <Text
+          fontSize="22px"
+          fontWeight="bold"
+          color="yellow.300"
+          marginLeft={{ base: 5, md: "100px" }}
+        >
+          Paquete Nelmio CORS
+        </Text>
+        <br />
+        <br />
+      </Box>
+
+      <br />
+      <br />
+      <Box id="webpack">
+        <Text
+          fontSize="50px"
+          marginLeft={{ base: 5, md: "100px" }}
+          fontWeight="bold"
+          textDecoration="underline"
+          textDecorationColor="cyan.700"
+        >
+          Webpack
+        </Text>
+        <Text
+          fontSize="22px"
+          fontWeight="bold"
+          color="yellow.300"
+          marginLeft={{ base: 5, md: "100px" }}
+        >
+          Compilación de React en Symfony
         </Text>
       </Box>
     </Box>

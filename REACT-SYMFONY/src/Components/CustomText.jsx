@@ -5,7 +5,7 @@ import { Text } from "@chakra-ui/react";
 const CustomText = ({ children }) => {
   return (
     <Text
-      marginLeft={{ base: 5, md: "100px" }}
+      marginLeft={{ base: 5, md: "50px" }}
       textAlign="justify"
       maxWidth="1000px"
       fontWeight="bold"
