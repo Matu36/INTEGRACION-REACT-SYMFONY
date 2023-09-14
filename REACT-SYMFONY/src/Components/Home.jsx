@@ -138,7 +138,11 @@ export default function Home() {
               composer require symfony/webpack-encore-bundle
             </Text>
             <br />
+
+            {/* ACA VAMOS A PONER LA CONFIGURACION DE REACT - INICIALIZAR PROYECTO
+            CONFIGURACION BASICA */}
             <Text fontSize="m" fontWeight="bold">
+
               Posteriormente, creamos un controlador para renderizar los
               componentes{" "}
             </Text>
@@ -275,6 +279,9 @@ export default function Home() {
         >
           Integración
         </Text>
+{/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
+CONSUMIRLO DESDE REACT CON EJEMPLOS */}
+
         <Text
           fontSize="22px"
           fontWeight="bold"
@@ -299,6 +306,9 @@ export default function Home() {
         >
           Cors y Seguridad
         </Text>
+
+        {/* ACA EXPLICAMOS COMO FUNCIONA EL PAQUETE NELMIOS Y QUE DEBEMOS PONER
+        TANTO EN LA LLAMA DE REACT A LA CONFIG DEL PAQUETE NELMIOS */}
         <Text
           fontSize="22px"
           fontWeight="bold"
@@ -323,6 +333,8 @@ export default function Home() {
         >
           Webpack
         </Text>
+
+        {/* TODA LA CONFIGURACION DE WEBPACK PARA INTEGRAR AMBOS PROEYCTOS */}
         <Text
           fontSize="22px"
           fontWeight="bold"
