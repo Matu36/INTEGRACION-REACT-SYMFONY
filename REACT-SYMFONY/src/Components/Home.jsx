@@ -85,15 +85,46 @@ export default function Home() {
           Configuración
         </Text>
         <br />
+        <Text fontWeight="bold" fontSize="30px" marginLeft="3rem">
+          {" "}
+          Un mismo proyecto, dos repositorios distintos
+        </Text>
+        <br />
         <div>
           <CustomText>
+            <Text>
+              Antes que nada, queremos describir como fue la forma en la que
+              trabajamos:
+            </Text>
+            <br />
+            <Text>
+              Por un lado desarrollábamos nuestro proyecto en el Backend
+              (symfony), y por el otro lado en el Frontend (react)
+            </Text>
+            <Text>
+              Dentro del ámbito ministerial, digamos que agregamos un rama más a
+              las que ya existen.
+            </Text>
+            <Text>
+              La rama en la que trabajamos y veíamos todos los cambios en tiempo
+              real, llamemosla PRE-LOCAL.
+            </Text>
+            <Text>
+              Una vez que teníamos una considerable cantidad de cambios la
+              subíamos a la rama LOCAL.
+            </Text>
+            <br />
+            <br />
+            <Text textDecoration="underline">Configurando SYMFONY</Text>
+            <br />
             Lo primero que debemos hacer es descargar nuestro proyecto de
             Symfony; una vez descargado, a los paquetes habituales debemos
             instalar lo siguiente: composer require nelmio/cors-bundle:^2.3;
-            Esto nos intalara el paquete "nelmio/cors-bundle": "^2.3", que nos
-            va evitar los problemas de CORS y poder configurar la seguridad.
-            Para esto, una vez que instalamos nelmio, nuestro archivo
-            nelmio_cors.yaml (dentro de packages) debería quedar asi:
+            Esto nos intalará el paquete "nelmio/cors-bundle": "^2.3", que nos
+            va evitar los problemas de CORS (privacidad y/o seguridad entre
+            distintos puertos) y poder configurar la seguridad. Para esto, una
+            vez que instalamos nelmio, nuestro archivo nelmio_cors.yaml (dentro
+            de packages) debería quedar asi:
           </CustomText>
         </div>
         <br />
@@ -139,9 +170,68 @@ export default function Home() {
               composer require symfony/webpack-encore-bundle
             </Text>
             <br />
+            <Text> Acá ya tendríamos la configuración básica de SYMFONY. </Text>
+            <br />
+            <br />
+            <Text textDecoration="underline">Configurando REACT</Text>
+            <br />
+            <Text>Primer paso: </Text>
+            <Text>
+              Instalamos NODE.JS: https://nodejs.org/es/download; La instalación
+              de Node automáticamente nos agregará la variable de entorno;
+              Debemos reiniciar nuestro editor de Texto y ya estaríamos listos
+              para usar NODE.{" "}
+            </Text>
+            <Text>
+              En la consola, en nuestro editor de texto, escribimos: npm init
+            </Text>
+            Para crear nuestro proyecto de React.js usaremos a VITE, que es un
+            empaquetador. El comando es: npm create vite@latest
+            "nombre-de-mi-proyecto" (esto crea el proyecto)
+            <Text>-Acá elegimos a REACT: </Text>
+            <br />
+            <Text>Project name: … vite-project ? Select a framework:</Text> › -
+            Use arrow-keys. Return to submit.
+            <Text>Vanilla Vue </Text>
+            <Text>❯ React </Text>
+            <Text> Preact Lit</Text>
+            <Text>Svelte - </Text>
+            <br />
+            <Text>Acá elegimos el lenguaje:</Text>
+            <br />
+            Select a variant: › - Use arrow-keys. Return to submit.{" "}
+            <Text>❯ JavaScript </Text> <Text> TypeScript </Text>
+            <br />
+            En la carpeta del proyecto, en nuestro editor de texto, ponemos el
+            siguiente comando: - npm install (esto instalará todas las
+            dependencias). - npm run dev (esto comenzará a correr el proyecto).
+            LISTO -- Ya tenemos nuestro front-end corriendo en el puerto 5173!
+            En nuestro proyecto, las dependencias se almacenarán en los
+            node_modules y se mostrarán en el package.json. Dependencias que
+            usamos
+            <br />
+          </CustomText>
+        </div>
+      </Box>
+      <br />
+      <br />
+      <br />
 
-            {/* ACA VAMOS A PONER LA CONFIGURACION DE REACT - INICIALIZAR PROYECTO
-            CONFIGURACION BASICA */}
+      <Box id="integracion">
+        <Text
+          fontSize="50px"
+          marginLeft={{ base: 5, md: "100px" }}
+          fontWeight="bold"
+          textDecoration="underline"
+          textDecorationColor="cyan.700"
+        >
+          Integración
+        </Text>
+        {/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
+CONSUMIRLO DESDE REACT CON EJEMPLOS */}
+
+        <Box>
+          <CustomText>
             <Text fontSize="m" fontWeight="bold">
               Posteriormente, creamos un controlador para renderizar los
               componentes{" "}
@@ -157,7 +247,7 @@ export default function Home() {
               <br />
               <Text fontSize="xl" fontWeight="bold" textDecoration="underline">
                 {" "}
-                EJEMPLOS:{" "}
+                EJEMPLOS:
               </Text>
               <br />
               <Text fontSize="m" fontWeight="bold"></Text>class
@@ -226,61 +316,8 @@ export default function Home() {
               public function detalle_agentes($reactRouting): Response return
               $this-render('default/home.html.twig');
             </Text>
-            <br />
-
-            <Text>
-              /** * @Route("/operativos/reactRouting", name="app_operativos",
-              defaults="reactRouting": null) */ public function operativo():
-              Response return $this-render('default/home.html.twig');
-            </Text>
-            <br />
-
-            <Text>
-              /** * @Route("/honorarios/reactRouting", name="app_honorarios",
-              defaults="reactRouting": null) */ public function honorario():
-              Response return $this-render('default/home.html.twig');
-            </Text>
-            <br />
-
-            <Text>
-              /** * @Route("/modulos/reactRouting", name="app_modulos",
-              defaults="reactRouting": null) */ public function modulo():
-              Response return $this-render('default/home.html.twig');
-            </Text>
-            <br />
-
-            <Text>
-              /** * @Route("/ordenes/reactRouting", name="app_ordenes",
-              defaults="reactRouting": null) */ public function ordenes():
-              Response return $this-render('default/home.html.twig');
-            </Text>
-            <br />
-
-            <Text>
-              /** * @Route("/ordenes/ver-ordenes/reactRouting",
-              name="app_ver_ordenes", defaults="reactRouting": null) */ public
-              function verOrdenes(): Response return
-              $this-render('default/home.html.twig');
-            </Text>
           </CustomText>
-        </div>
-      </Box>
-      <br />
-      <br />
-      <br />
-
-      <Box id="integracion">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "100px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
-        >
-          Integración
-        </Text>
-        {/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
-CONSUMIRLO DESDE REACT CON EJEMPLOS */}
+        </Box>
 
         <Text
           fontSize="22px"
