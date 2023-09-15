@@ -207,11 +207,36 @@ export default function Home() {
             dependencias). - npm run dev (esto comenzará a correr el proyecto).
             LISTO -- Ya tenemos nuestro front-end corriendo en el puerto 5173!
             En nuestro proyecto, las dependencias se almacenarán en los
-            node_modules y se mostrarán en el package.json. Dependencias que
-            usamos en nuestro Proyecto:
-
+            node_modules y se mostrarán en el package.json.
+            <br />
+            <br />
+            <Text>
+              Estas son alguna de las dependencias que usamos en nuestro
+              proyecto
+            </Text>
+            <br />
+            <Text>
+              "@react-pdf/renderer": "^3.1.12", "@tanstack/react-query":
+              "^4.29.12", "@tanstack/react-query-devtools": "^4.29.12", "axios":
+              "^1.4.0", "bootstrap": "^5.3.0", "bootstrap-icons": "^1.10.5",
+              "moment": "^2.29.4", "numero-a-letras": "^1.0.6", "react":
+              "^18.2.0", "react-data-table-component": "^7.5.3", "react-dom":
+              "^18.2.0", "react-icons": "^4.9.0", "react-redux": "^8.0.7",
+              "react-router-dom": "^6.12.1", "react-select": "^5.7.4", "redux":
+              "^4.2.1", "redux-devtools-extension": "^2.13.9", "redux-thunk":
+              "^2.4.2", "sweetalert2": "^11.7.12"
+            </Text>
+            <br />
+            <Text>
+              Si quisieramos, por ejemplo, una librería para hacer PDF, en
+              google solamente debemos poner react-PDF o npm PDF react, y nos
+              deberia aparecer el comando para instalarlo en nuestro proyecto;
+              por ejemplo,
+            </Text>
+            <Text>"@react-pdf/renderer": es: npm i react-pdf </Text>
 
             <br />
+            <Text> Acá ya tendríamos la configuración básica de REACT</Text>
           </CustomText>
         </div>
       </Box>
@@ -231,10 +256,6 @@ export default function Home() {
         </Text>
         {/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
 CONSUMIRLO DESDE REACT CON EJEMPLOS */}
-
-
-
-        
 
         <Text
           fontSize="22px"
@@ -293,8 +314,7 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
         <Box>
           <CustomText>
             <Text fontSize="m" fontWeight="bold">
-              Creamos un controlador para renderizar los
-              componentes
+              Creamos un controlador para renderizar los componentes
             </Text>
             <Text fontSize="m" fontWeight="bold">
               (es decir, en este controlador vamos a renderizar el punto de
