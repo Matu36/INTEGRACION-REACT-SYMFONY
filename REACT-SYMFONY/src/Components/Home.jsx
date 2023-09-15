@@ -208,7 +208,9 @@ export default function Home() {
             LISTO -- Ya tenemos nuestro front-end corriendo en el puerto 5173!
             En nuestro proyecto, las dependencias se almacenarán en los
             node_modules y se mostrarán en el package.json. Dependencias que
-            usamos
+            usamos en nuestro Proyecto:
+
+
             <br />
           </CustomText>
         </div>
@@ -230,11 +232,69 @@ export default function Home() {
         {/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
 CONSUMIRLO DESDE REACT CON EJEMPLOS */}
 
+
+
+        
+
+        <Text
+          fontSize="22px"
+          fontWeight="bold"
+          color="yellow.300"
+          marginLeft={{ base: 5, md: "100px" }}
+        >
+          Formas de uso de ambas tecnologías
+        </Text>
+        <br />
+        <br />
+
+        <br />
+        <br />
+      </Box>
+      <Box id="corsyseguridad">
+        <Text
+          fontSize="50px"
+          marginLeft={{ base: 5, md: "100px" }}
+          fontWeight="bold"
+          textDecoration="underline"
+          textDecorationColor="cyan.700"
+        >
+          Cors y Seguridad
+        </Text>
+
+        {/* ACA EXPLICAMOS COMO FUNCIONA EL PAQUETE NELMIOS Y QUE DEBEMOS PONER
+        TANTO EN LA LLAMA DE REACT A LA CONFIG DEL PAQUETE NELMIOS */}
+        <Text
+          fontSize="22px"
+          fontWeight="bold"
+          color="yellow.300"
+          marginLeft={{ base: 5, md: "100px" }}
+        >
+          Paquete Nelmio CORS
+        </Text>
+        <br />
+        <br />
+      </Box>
+
+      <br />
+      <br />
+      <Box id="webpack">
+        <Text
+          fontSize="50px"
+          marginLeft={{ base: 5, md: "100px" }}
+          fontWeight="bold"
+          textDecoration="underline"
+          textDecorationColor="cyan.700"
+        >
+          Webpack
+        </Text>
+
+        {/* TODA LA CONFIGURACION DE WEBPACK PARA INTEGRAR AMBOS PROEYCTOS */}
+        <br />
         <Box>
           <CustomText>
             <Text fontSize="m" fontWeight="bold">
-              Posteriormente, creamos un controlador para renderizar los
-              componentes{" "}
+              Creamos un controlador para renderizar los
+              componentes
             </Text>
             <Text fontSize="m" fontWeight="bold">
               (es decir, en este controlador vamos a renderizar el punto de
@@ -318,60 +378,6 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
             </Text>
           </CustomText>
         </Box>
-
-        <Text
-          fontSize="22px"
-          fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{ base: 5, md: "100px" }}
-        >
-          Formas de uso de ambas tecnologías
-        </Text>
-        <br />
-        <br />
-
-        <br />
-        <br />
-      </Box>
-      <Box id="corsyseguridad">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "100px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
-        >
-          Cors y Seguridad
-        </Text>
-
-        {/* ACA EXPLICAMOS COMO FUNCIONA EL PAQUETE NELMIOS Y QUE DEBEMOS PONER
-        TANTO EN LA LLAMA DE REACT A LA CONFIG DEL PAQUETE NELMIOS */}
-        <Text
-          fontSize="22px"
-          fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{ base: 5, md: "100px" }}
-        >
-          Paquete Nelmio CORS
-        </Text>
-        <br />
-        <br />
-      </Box>
-
-      <br />
-      <br />
-      <Box id="webpack">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "100px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
-        >
-          Webpack
-        </Text>
-
-        {/* TODA LA CONFIGURACION DE WEBPACK PARA INTEGRAR AMBOS PROEYCTOS */}
         <Text
           fontSize="22px"
           fontWeight="bold"
