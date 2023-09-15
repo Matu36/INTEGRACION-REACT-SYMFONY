@@ -1,7 +1,8 @@
 import React from "react";
 import NavBar from "./NavBar";
-import { Text, Box, Image, Flex } from "@chakra-ui/react";
+import { Text, Box, Flex } from "@chakra-ui/react";
 import CustomText from "./CustomText";
+import ImagesCarrousel from "./Carrousel";
 
 export default function Home() {
   return (
@@ -32,7 +33,7 @@ export default function Home() {
           style={{
             "@media screen and (max-width: 768px)": {
               fontSize: "20px",
-              width: "150%",
+              width: "100%",
 
               justifyContent: "center",
               marginLeft: "10px",
@@ -42,6 +43,7 @@ export default function Home() {
         >
           Integrando Symfony con React
         </Text>
+        <ImagesCarrousel />
         <br />
         <br />
         <Box maxWidth="1000px">
@@ -72,7 +74,6 @@ export default function Home() {
         }}
       ></Flex>
 
-      <br />
       <Box id="Configuracion-inicial">
         <Text
           fontSize="50px"
@@ -104,7 +105,7 @@ export default function Home() {
           maxW={{ base: "100%", md: "440px" }}
           width="60%"
           textAlign="left"
-          marginLeft="6rem"
+          marginLeft={{ base: "3rem", md: "6rem" }}
         >
           <Text fontSize="m" fontWeight="bold">
             nelmio_cors:
@@ -142,7 +143,6 @@ export default function Home() {
             {/* ACA VAMOS A PONER LA CONFIGURACION DE REACT - INICIALIZAR PROYECTO
             CONFIGURACION BASICA */}
             <Text fontSize="m" fontWeight="bold">
-
               Posteriormente, creamos un controlador para renderizar los
               componentes{" "}
             </Text>
@@ -279,7 +279,7 @@ export default function Home() {
         >
           Integración
         </Text>
-{/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
+        {/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
 CONSUMIRLO DESDE REACT CON EJEMPLOS */}
 
         <Text
