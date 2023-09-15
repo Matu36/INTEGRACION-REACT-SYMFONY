@@ -236,7 +236,7 @@ export default function Home() {
             <Text>"@react-pdf/renderer": es: npm i react-pdf </Text>
 
             <br />
-            <Text> Acá ya tendríamos la configuración básica de REACT</Text>
+            <Text> Acá ya tendríamos la configuración básica de REACT.</Text>
           </CustomText>
         </div>
       </Box>
@@ -307,6 +307,14 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
           textDecorationColor="cyan.700"
         >
           Webpack
+        </Text>
+        <Text
+          fontSize="22px"
+          fontWeight="bold"
+          color="yellow.300"
+          marginLeft={{ base: 5, md: "100px" }}
+        >
+          Compilación de React en Symfony
         </Text>
 
         {/* TODA LA CONFIGURACION DE WEBPACK PARA INTEGRAR AMBOS PROEYCTOS */}
@@ -398,14 +406,7 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
             </Text>
           </CustomText>
         </Box>
-        <Text
-          fontSize="22px"
-          fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{ base: 5, md: "100px" }}
-        >
-          Compilación de React en Symfony
-        </Text>
+       
       </Box>
     </Box>
   );
