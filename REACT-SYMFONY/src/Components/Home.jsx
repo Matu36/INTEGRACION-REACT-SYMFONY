@@ -107,7 +107,8 @@ export default function Home() {
             </Text>
             <Text>
               La rama en la que trabajamos y veíamos todos los cambios en tiempo
-              real, llamemosla PRE-LOCAL.
+              real, llamemosla PRE-LOCAL. Toda la documentación desarrollada aquí estará basada
+              en esta rama; posteriormente, en el apartado Webpack, se explicará la rama Local y Dev.
             </Text>
             <Text>
               Una vez que teníamos una considerable cantidad de cambios la
@@ -234,7 +235,6 @@ export default function Home() {
               por ejemplo,
             </Text>
             <Text>"@react-pdf/renderer": es: npm i react-pdf </Text>
-
             <br />
             <Text> Acá ya tendríamos la configuración básica de REACT.</Text>
           </CustomText>
@@ -406,7 +406,6 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
             </Text>
           </CustomText>
         </Box>
-       
       </Box>
     </Box>
   );
