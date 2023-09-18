@@ -399,7 +399,7 @@ export default function Home() {
         <br />
 
         <CustomText>
-          <Text>El paquete nelmio se usar para:</Text>
+          <Text>El paquete nelmio se usa para:</Text>
           <Text>
             Documentación de rutas y métodos: El paquete documenta las rutas de
             la API,{" "}
@@ -459,7 +459,7 @@ export default function Home() {
           <Text>'Access-Control-Allow-Origin': '*', </Text>
           <Text>'allow_methods': ["GET", "POST"], </Text>
           <Text>"Access-Control-Allow-Credentials": true LLAVE )</Text>
-        </CustomText>
+        
         <br />
         <Text>
           {" "}
@@ -471,6 +471,7 @@ export default function Home() {
           que le damos acceso a diferentes métodos, y las credenciales
           establecerlas en TRUE
         </Text>
+        </CustomText>
       </Box>
       <br />
 
