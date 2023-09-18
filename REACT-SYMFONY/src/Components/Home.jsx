@@ -84,10 +84,11 @@ export default function Home() {
         >
           Configuración
         </Text>
-        <br />
+
         <Text
+          fontSize="22px"
           fontWeight="bold"
-          fontSize="30px"
+          color="yellow.300"
           marginLeft={{ base: "1rem", md: "3rem" }}
         >
           Un mismo proyecto, dos repositorios distintos
@@ -110,8 +111,9 @@ export default function Home() {
             </Text>
             <Text>
               La rama en la que trabajamos y veíamos todos los cambios en tiempo
-              real, llamemosla PRE-LOCAL. Toda la documentación desarrollada aquí estará basada
-              en esta rama; posteriormente, en el apartado Webpack, se explicará la rama Local y Dev.
+              real, llamemosla PRE-LOCAL. Toda la documentación desarrollada
+              aquí estará basada en esta rama; posteriormente, en el apartado
+              Webpack, se explicará la rama Local y Dev.
             </Text>
             <Text>
               Una vez que teníamos una considerable cantidad de cambios la
@@ -128,41 +130,9 @@ export default function Home() {
             instalar lo siguiente: composer require nelmio/cors-bundle:^2.3;
             Esto nos intalará el paquete "nelmio/cors-bundle": "^2.3", que nos
             va evitar los problemas de CORS (privacidad y/o seguridad entre
-            distintos puertos) y poder configurar la seguridad. Para esto, una
-            vez que instalamos nelmio, nuestro archivo nelmio_cors.yaml (dentro
-            de packages) debería quedar asi:
+            distintos puertos) y poder configurar la seguridad.
           </CustomText>
         </div>
-        <br />
-
-        <Box
-          border="6px solid"
-          borderColor="cyan.700"
-          p={8}
-          maxW={{ base: "100%", md: "440px" }}
-          width="60%"
-          textAlign="left"
-          marginLeft={{ base: "3rem", md: "6rem" }}
-        >
-          <Text fontSize="m" fontWeight="bold">
-            nelmio_cors:
-          </Text>
-          <Text fontSize="m" fontWeight="bold">
-            defaults:
-          </Text>
-          <Text fontSize="m" fontWeight="bold">
-            allow_credentials: true
-          </Text>
-          <Text fontSize="m" fontWeight="bold">
-            allow_origin: [ '*' ]
-          </Text>
-          <Text fontSize="m" fontWeight="bold">
-            allow_headers: [ '*' ]
-          </Text>
-          <Text fontSize="m" fontWeight="bold">
-            allow_methods: [ 'GET', 'POST', 'PUT', 'DELETE' ]
-          </Text>
-        </Box>
         <br />
 
         <div>
@@ -220,20 +190,24 @@ export default function Home() {
             <br />
             <Text>
               Estas son alguna de las dependencias que usamos en nuestro
-              proyecto
+              proyecto:
             </Text>
             <br />
-            <Text>
-              "@react-pdf/renderer": "^3.1.12", "@tanstack/react-query":
-              "^4.29.12", "@tanstack/react-query-devtools": "^4.29.12", "axios":
-              "^1.4.0", "bootstrap": "^5.3.0", "bootstrap-icons": "^1.10.5",
-              "moment": "^2.29.4", "numero-a-letras": "^1.0.6", "react":
-              "^18.2.0", "react-data-table-component": "^7.5.3", "react-dom":
-              "^18.2.0", "react-icons": "^4.9.0", "react-redux": "^8.0.7",
-              "react-router-dom": "^6.12.1", "react-select": "^5.7.4", "redux":
-              "^4.2.1", "redux-devtools-extension": "^2.13.9", "redux-thunk":
-              "^2.4.2", "sweetalert2": "^11.7.12"
-            </Text>
+            <Text>"@react-pdf/renderer": "^3.1.12", </Text>
+            <Text> "@tanstack/react-query": "^4.29.12",</Text>{" "}
+            <Text> "@tanstack/react-query-devtools": "^4.29.12", </Text>{" "}
+            <Text> "axios": "^1.4.0",</Text> "bootstrap": "^5.3.0",
+            <Text>"bootstrap-icons": "^1.10.5", </Text> "moment": "^2.29.4",
+            <Text>"numero-a-letras": "^1.0.6", </Text>"react": "^18.2.0",
+            <Text>"react-data-table-component": "^7.5.3", </Text>"react-dom":
+            "^18.2.0",
+            <Text> "react-icons": "^4.9.0", </Text>"react-redux": "^8.0.7",
+            <Text>"react-router-dom": "^6.12.1", </Text>"react-select":
+            "^5.7.4", "redux":
+            <Text>"^4.2.1", "redux-devtools-extension": "^2.13.9", </Text>
+            "redux-thunk":
+            <Text>"^2.4.2", </Text>"sweetalert2": "^11.7.12"
+            <br />
             <br />
             <Text>
               Si quisieramos, por ejemplo, una librería para hacer PDF, en
@@ -261,8 +235,6 @@ export default function Home() {
         >
           Integración
         </Text>
-        {/* ACA VAMOS A PONER COMO HACEMOS UN CONTROLADOR EN SYMFONY Y LA FORMA DE 
-CONSUMIRLO DESDE REACT CON EJEMPLOS */}
 
         <Text
           fontSize="22px"
@@ -273,8 +245,134 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
           Formas de uso de ambas tecnologías
         </Text>
         <br />
-        <br />
 
+        <CustomText>
+          <Text>
+            {" "}
+            Vamos a explicar con algunos ejemplos como podemos hacer para enviar
+            la información{" "}
+          </Text>
+          <Text> desde SYMFONY y como consumirla desde REACT: </Text>
+          <br />
+          <Text>
+            {" "}
+            Particularmente, en SYMFONY, nosotros usamos use
+            AbstractFOSRestController;
+          </Text>
+          <br />
+          <Text fontSize="1.5rem"> ¿Cómo lo instalamos? </Text>
+          <br />
+          <Text> composer require friendsofsymfony/rest-bundle </Text>
+          <br />
+          <Text>
+            Lo importamos así: use
+            FOS\RestBundle\Controller\AbstractFOSRestController;
+          </Text>
+          <br />
+          <Text>
+            Luego, en routes.yaml, debemos agregar los controladores; por ej:
+          </Text>
+          <br />
+          <Text>
+            {" "}
+            <Text> agentes: </Text> <Text>type: annotation </Text>{" "}
+            <Text>resource: App\Controller\AgentesController</Text>
+            prefix: api
+          </Text>
+          <br />
+          <Text>
+            Luego, la forma de manejar las funciones, fue moduralizarla en capas
+            de abstracción
+          </Text>
+          <Text> Primero, desarrollando la lógica en el Repository;</Text>
+          <Text>Luego, moduralizarla en una función en el Service;</Text>
+          <Text>Por último, desarrollar la ruta en el Controller;</Text>
+          <br />
+          <Text>
+            Vamos a mostrar un ejemplo de como manejamos un findAll de una
+            Entidad:{" "}
+          </Text>
+          <Text>
+            En este caso, teníamos que traer todos los agentes y lo manejamos
+            con un Service y un Controller, ya que no requería demasiada lógica;
+          </Text>
+          <br />
+          <Text fontSize="1.5rem" textDecoration="underline">
+            {" "}
+            En el Service{" "}
+          </Text>
+          <br />
+          <Text>
+            public function getAgentes()
+            <Text>$data = $this-agenteRepository-findAll(); </Text>
+            <br />
+            <Text>$response = [$data, Response::HTTP_OK]; </Text>
+            <br />
+            <Text>if (count($data) == 0) </Text>
+            <br />
+            <Text>
+              {" "}
+              $response = ["msg" = "No hay ningún agente en el sistema",
+              Response::HTTP_BAD_REQUEST];{" "}
+            </Text>
+            <br />
+            <Text>return $response; </Text>
+            <br />
+            <Text fontSize="1.5rem" textDecoration="underline">
+              {" "}
+              Y así lo hacíamos desde el controlador, el cual debía devolver una
+              respuesta json:{" "}
+            </Text>
+            <br />
+            <Text>
+              {" "}
+              /**
+              <Text> * @Rest\Get("/agentes", name="get_agentes") </Text>
+              <Text>* @return View </Text>
+              <Text>*/ </Text>
+              <Text>public function getAgentes(): View </Text>
+              <Text>$response = $this-agenteService-getAgentes(); </Text>
+              <Text>return $this-view($response[0], $response[1]); </Text>
+            </Text>
+          </Text>
+          <br />
+          <Text>
+            Bien, ya tenemos el controlador y la ruta que nos envía la data que
+            queremos,{" "}
+          </Text>
+          <br />
+          <Text>¿Cómo hacemos ahora para consumirla desde React? </Text>
+          <br />
+
+          <Text>import axios from "axios"; </Text>
+          <br />
+          <Text>export const AgentesAPI = axios.create(LLAVE </Text>
+          <Text>
+            baseURL: `$LLAVE import.meta.env.VITE_BACKEND_URL LLAVE /agentes`{" "}
+          </Text>
+          <Text>withCredentials: true, </Text>
+          <Text>mode: "cors", </Text>
+          <Text>headers: LLAVE </Text>
+          <Text>'Access-Control-Allow-Origin': '*', </Text>
+          <Text>'allow_methods': ["GET", "POST"], </Text>
+          <Text>"Access-Control-Allow-Credentials": true </Text>
+          <Text>LLAVE, LLAVE).</Text>
+          <br />
+          <Text>
+            En vez de fetch, utilizamos axios para hacer las llamadas
+            asincrónicas;
+          </Text>
+          <Text>Dentro del .env tenemos configurada nuestra ruta base.</Text>
+          <br />
+          <Text>
+            Eso sería todo; envíamos la información desde Symfony y la
+            consumimos desde React;
+          </Text>
+          <Text>
+            De la misma manera, debemos hacer con el resto de los controladores
+            y el resto de las rutas.
+          </Text>
+        </CustomText>
         <br />
         <br />
       </Box>
@@ -289,8 +387,6 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
           Cors y Seguridad
         </Text>
 
-        {/* ACA EXPLICAMOS COMO FUNCIONA EL PAQUETE NELMIOS Y QUE DEBEMOS PONER
-        TANTO EN LA LLAMA DE REACT A LA CONFIG DEL PAQUETE NELMIOS */}
         <Text
           fontSize="22px"
           fontWeight="bold"
@@ -301,10 +397,83 @@ CONSUMIRLO DESDE REACT CON EJEMPLOS */}
         </Text>
         <br />
         <br />
-      </Box>
 
+        <CustomText>
+          <Text>El paquete nelmio se usar para:</Text>
+          <Text>
+            Documentación de rutas y métodos: El paquete documenta las rutas de
+            la API,{" "}
+          </Text>
+          <Text>
+            los métodos HTTP permitidos, los parámetros de solicitud y
+            respuesta, los tipos{" "}
+          </Text>
+          <Text>de datos admitidos y otros detalles relevantes.</Text>
+          <br />
+          <Text>
+            {" "}
+            Una vez que instalamos nelmio, nuestro archivo nelmio_cors.yaml
+            (dentro de packages) debería quedar asi:{" "}
+          </Text>
+          <br />
+          <br />
+          <Box
+            border="6px solid"
+            borderColor="cyan.700"
+            p={8}
+            maxW={{ base: "100%", md: "440px" }}
+            width="60%"
+            textAlign="left"
+            marginLeft={{ base: "3rem", md: "3rem" }}
+          >
+            <Text fontSize="m" fontWeight="bold">
+              nelmio_cors:
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              defaults:
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              allow_credentials: true
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              allow_origin: [ '*' ]
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              allow_headers: [ '*' ]
+            </Text>
+            <Text fontSize="m" fontWeight="bold">
+              allow_methods: [ 'GET', 'POST', 'PUT', 'DELETE' ]
+            </Text>
+          </Box>
+          <br />
+          <Text>
+            {" "}
+            Una vez configurado el paquete nelmio en symfony, ahora debemos
+            preparar las llamadas desde el front,{" "}
+          </Text>
+          <Text>las cuales todas deben tener lo siguiente: </Text>
+          <br />
+          <Text>withCredentials: true, </Text>
+          <Text>mode: "cors", </Text>
+          <Text>headers: LLAVE </Text>
+          <Text>'Access-Control-Allow-Origin': '*', </Text>
+          <Text>'allow_methods': ["GET", "POST"], </Text>
+          <Text>"Access-Control-Allow-Credentials": true LLAVE )</Text>
+        </CustomText>
+        <br />
+        <Text>
+          {" "}
+          En toda llamada que hacemos desde React debemos asegurarnos de enviar
+          en los headers{" "}
+        </Text>
+        <Text>
+          {" "}
+          que le damos acceso a diferentes métodos, y las credenciales
+          establecerlas en TRUE
+        </Text>
+      </Box>
       <br />
-      <br />
+
       <Box id="webpack">
         <Text
           fontSize="50px"
