@@ -85,8 +85,11 @@ export default function Home() {
           Configuración
         </Text>
         <br />
-        <Text fontWeight="bold" fontSize="30px" marginLeft="3rem">
-          {" "}
+        <Text
+          fontWeight="bold"
+          fontSize="30px"
+          marginLeft={{ base: "1rem", md: "3rem" }}
+        >
           Un mismo proyecto, dos repositorios distintos
         </Text>
         <br />
@@ -116,7 +119,9 @@ export default function Home() {
             </Text>
             <br />
             <br />
-            <Text textDecoration="underline">Configurando SYMFONY</Text>
+            <Text textDecoration="underline" fontSize="2rem" color="cyan.700">
+              SYMFONY
+            </Text>
             <br />
             Lo primero que debemos hacer es descargar nuestro proyecto de
             Symfony; una vez descargado, a los paquetes habituales debemos
@@ -174,7 +179,9 @@ export default function Home() {
             <Text> Acá ya tendríamos la configuración básica de SYMFONY. </Text>
             <br />
             <br />
-            <Text textDecoration="underline">Configurando REACT</Text>
+            <Text textDecoration="underline" fontSize="2rem" color="cyan.700">
+              REACT
+            </Text>
             <br />
             <Text>Primer paso: </Text>
             <Text>
