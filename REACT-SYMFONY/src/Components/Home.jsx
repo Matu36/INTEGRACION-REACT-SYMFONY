@@ -260,7 +260,8 @@ export default function Home() {
             AbstractFOSRestController;
           </Text>
           <br />
-          <Text fontSize="1.5rem"> ¿Cómo lo instalamos? </Text>
+          <br />
+          <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400"> ¿Cómo lo instalamos? </Text>
           <br />
           <Text> composer require friendsofsymfony/rest-bundle </Text>
           <br />
@@ -297,7 +298,8 @@ export default function Home() {
             con un Service y un Controller, ya que no requería demasiada lógica;
           </Text>
           <br />
-          <Text fontSize="1.5rem" textDecoration="underline">
+          <br />
+          <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
             {" "}
             En el Service{" "}
           </Text>
@@ -318,15 +320,15 @@ export default function Home() {
             <br />
             <Text>return $response; </Text>
             <br />
-            <Text fontSize="1.5rem" textDecoration="underline">
+            <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
               {" "}
-              Y así lo hacíamos desde el controlador, el cual debía devolver una
-              respuesta json:{" "}
+              En el controlador: 
             </Text>
+            <Text>(el cual debe devolver una
+              respuesta json) </Text>
             <br />
             <Text>
               {" "}
-              /**
               <Text> * @Rest\Get("/agentes", name="get_agentes") </Text>
               <Text>* @return View </Text>
               <Text>*/ </Text>
@@ -459,18 +461,18 @@ export default function Home() {
           <Text>'Access-Control-Allow-Origin': '*', </Text>
           <Text>'allow_methods': ["GET", "POST"], </Text>
           <Text>"Access-Control-Allow-Credentials": true LLAVE )</Text>
-        
-        <br />
-        <Text>
-          {" "}
-          En toda llamada que hacemos desde React debemos asegurarnos de enviar
-          en los headers{" "}
-        </Text>
-        <Text>
-          {" "}
-          que le damos acceso a diferentes métodos, y las credenciales
-          establecerlas en TRUE
-        </Text>
+
+          <br />
+          <Text>
+            {" "}
+            En toda llamada que hacemos desde React debemos asegurarnos de
+            enviar en los headers{" "}
+          </Text>
+          <Text>
+            {" "}
+            que le damos acceso a diferentes métodos, y las credenciales
+            establecerlas en TRUE
+          </Text>
         </CustomText>
       </Box>
       <br />
@@ -494,12 +496,26 @@ export default function Home() {
           Compilación de React en Symfony
         </Text>
 
-        {/* TODA LA CONFIGURACION DE WEBPACK PARA INTEGRAR AMBOS PROEYCTOS */}
         <br />
         <Box>
           <CustomText>
+            <Text>
+              Bien, hasta ahora, hemos trabajado en lo que habíamos denominado
+              rama PRE LOCAL;
+            </Text>
+
+            <Text>
+              Es hora de integrar React y Symfony dentro de un mismo directorio
+              y que funcionen unificados:{" "}
+            </Text>
+            <br />
+            <Text>
+              Copiamos el directorio del proyecto de React dentro de nuestro
+              proyecto de Symfony
+            </Text>
+            <br />
             <Text fontSize="m" fontWeight="bold">
-              Creamos un controlador para renderizar los componentes
+              Creamos un controlador para renderizar los componentes:
             </Text>
             <Text fontSize="m" fontWeight="bold">
               (es decir, en este controlador vamos a renderizar el punto de
@@ -510,7 +526,7 @@ export default function Home() {
               <br />
               <br />
               <br />
-              <Text fontSize="xl" fontWeight="bold" textDecoration="underline">
+              <Text fontSize="xl" fontWeight="bold" textDecoration="underline" color="cyan.400">
                 {" "}
                 EJEMPLOS:
               </Text>
@@ -521,11 +537,13 @@ export default function Home() {
 
             <Text fontSize="m" fontWeight="bold">
               {" "}
-              /**
             </Text>
+            <br />
+            <Text fontSize="1.5rem" color="yellow.300"> Renderizando las Rutas de React: </Text>
+            <br />
             <Text fontSize="m" fontWeight="bold">
               {" "}
-              * @Route ("/reactRouting", name="home", defaults="reactRouting":
+              @Route ("/reactRouting", name="home", defaults="reactRouting":
               null )
             </Text>
             <Text fontSize="m" fontWeight="bold">
@@ -552,36 +570,312 @@ export default function Home() {
             </Text>
             <br />
             <br />
-            <Text textDecoration="underline" fontSize="22px">
+            <Text textDecoration="underline" fontSize="1.5rem" color="cyan.400">
               Así debemos hacer todas las rutas que tengamos en nuestro
-              proyecto; quedaría de esta forma:
+              proyecto:
             </Text>
 
             <br />
 
             <Text>
-              /** * @Route("/reactRouting", name="app_home",
-              defaults="reactRouting": null) */ public function
-              home($reactRouting): Response return
+              @Route("/reactRouting", name="app_home", defaults="reactRouting":
+              null) */ public function home($reactRouting): Response return
               $this-render('default/home.html.twig');
             </Text>
             <br />
 
             <Text>
-              /** * @Route("/agentes/reactRouting", name="app_agentes",
+              @Route("/agentes/reactRouting", name="app_agentes",
               defaults="reactRouting": null) */ public function
               agentes($reactRouting): Response return
               $this-render('default/home.html.twig');
             </Text>
             <br />
+            <Text>En react, para manejar las rutas, usamos BroswerRouter;</Text>
+            <br />
+            <Text>
+              Por ejemplo, para la ruta de agentes, desde el front, nos quedó
+              así:
+              <br />
+              <Text>
+                const router = createBrowserRouter([ LLAVE path: "/agentes",
+                element: RedirectComponent / (esto es un componente), children:
+                [ LLAVE path: "/agentes/ver-agentes", element: Agentes (esto es
+                un componente) , LLAVE, LLAVE path: "/agentes/crear-agente",
+                element: CrearAgente /, (esto es un componente) LLAVE, LLAVE
+                path: "/agentes/agente/:id", element: Detail , (esto es un
+                componente) LLAVE, ], LLAVE,
+              </Text>
+            </Text>
+            <br />
 
             <Text>
-              /** * @Route("/agentes/agente/reactRouting",
-              name="app_detalle_agentes", defaults="reactRouting": null) */
-              public function detalle_agentes($reactRouting): Response return
+              @Route("/agentes/agente/reactRouting", name="app_detalle_agentes",
+              defaults="reactRouting": null) */ public function
+              detalle_agentes($reactRouting): Response return
               $this-render('default/home.html.twig');
             </Text>
+            <br />
+            <Text>
+              {" "}
+              Luego de hacer esto, preparamos el Template de Twig
+              (default/index.html.twig) para que renderice los componentes:
+            </Text>
+            <br />
+            <Box
+              border="6px solid"
+              borderColor="cyan.700"
+              p={8}
+              maxW={{ base: "100%", md: "440px" }}
+              width="60%"
+              textAlign="left"
+              marginLeft={{ base: "3rem", md: "3rem" }}
+            >
+              <Text>% extends 'base.html.twig' % </Text>
+              <br />
+              <Text> % block title % Symfony React Project % endblock % </Text>
+              <br />
+              <Text> % block body % </Text>
+              <br />
+              <Text> div id="root" div </Text>
+              <br />
+              <Text>% endblock %</Text>
+            </Box>
+            <br />
+            <Text>
+              Bien, ya tenemos preparado el template de twig y las rutas;
+              previamente,
+            </Text>
+            <Text>
+              ya teníamos instalado webpack Encore, por lo que ahora, debemos
+              escribir en la terminal:
+            </Text>
+            <br />
+            <Text>
+              yarn install o npm install para bajar todos los paquetes y así
+              poder hacer funcionar a react.
+            </Text>
+            <br />
+            <Text>
+              Ahora, lo que debemos hacer, es terminar de instalar las
+              dependencias asociadas a React y al bundle:
+            </Text>
+            <br />
+            <Text>$ yarn add @babel/preset-react --dev </Text>
+            <br />
+            <Text>$ yarn add --dev react react-dom prop-types axios </Text>
+            <br />
+            <Text>
+              $ yarn add @babel/plugin-proposal-class-properties
+              @babel/plugin-transform-runtime{" "}
+            </Text>
+            <br />
+            <br />
+            <Text fontSize="2rem" textDecoration="underline" color="yellow.300" >
+              {" "}
+              Webpack.config{" "}
+            </Text>
+            <br />
+            <Text> Configurar webpack.config.js:</Text>
+            <br />
+            <Text>
+              const Encore = require('@symfony/webpack-encore');
+              if(!Encore.isRuntimeEnvironmentConfigured()) LLAVE
+              Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev')
+              LLAVE;
+              <br />
+              <br />
+              <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
+                {" "}
+                Encore{" "}
+              </Text>
+              <br />
+              <Text>
+                {" "}
+                Directorio donde se almacenarán los archivos compilados:{" "}
+              </Text>
+              <br />
+              <Text> .setOutputPath('public/build/'){" "} </Text>
+            </Text>
+            <br />
+            <Text>
+              Ruta pública utilizada por el servidor web para acceder al
+              directorio de salida:
+            </Text>
+<br />
+            <Text> .setPublicPath('/symfony-react-wp/public/build') </Text>
+            <Text> .enableReactPreset()</Text>
+            <br />
+
+            <Text> // deploy </Text>
+            <Text> // .setManifestKeyPrefix('build/') </Text>
+            <br />
+            <br />
+            <Text>
+              <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
+                {" "}
+                Entry Config{" "}
+              </Text>
+              <br />
+              Cada entrada resultará en un archivo JavaScript (e.g. app.js) * y
+              un archivo CSS (e.g. app.css) si tu JavaScript importa CSS.
+              <br />
+              <br />
+              <Text>.addEntry('app', './assets/app.js') </Text>
+              <Text>.enableStimulusBridge('./assets/controllers.json') </Text>
+              <br />
+              <Text>
+                {" "}
+                // Habilita el puente Symfony UX Stimulus (utilizado en
+                assets/bootstrap.js) Cuando está habilitado, Webpack 'divide'
+                tus archivos en piezas más pequeñas para una mayor optimización.{" "}
+              </Text>
+              <br />
+              <Text> .splitEntryChunks() </Text>
+              <Text>.enableSingleRuntimeChunk()</Text>
+            </Text>
+
+            <br />
+            <br />
+            <Text>
+              <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
+                {" "}
+                Feature Config{" "}
+              </Text>
+              <br />
+            </Text>
+            <Text>
+              <Text> Esto habilita y configura otras características; </Text>
+              <Text>
+                {" "}
+                Para ver una lista completa de características, podés consultar
+                a:{" "}
+              </Text>
+              <Text>
+                {" "}
+                https://symfony.com/doc/current/frontend.html#adding-more-features{" "}
+              </Text>
+              <br />
+              <Text>.cleanupOutputBeforeBuild() </Text>
+              <Text>.enableBuildNotifications() </Text>
+              <Text>.enableSourceMaps(!Encore.isProduction()) </Text>
+              <br />
+              <Text>
+                // Habilita nombres de archivos con HASH (e.g. app.abc123.css){" "}
+              </Text>
+              <Text>.enableVersioning(Encore.isProduction()) </Text>
+              <br />
+              <Text>// Habilita @babel/preset-env polyfills </Text>
+              <Text>.configureBabelPresetEnv((config) = </Text>
+              <Text>config.useBuiltIns = 'usage'; </Text>
+              <Text>config.corejs = 3; </Text>)
+            </Text>
+            <br />
+            <br />
+            <Text>
+              Bueno, ahora vamos a terminar de configurar Twig para que
+              renderice los componentes de React:{" "}
+            </Text>
+            <br />
+            <br />
+            <Text fontSize="1.5rem" textDecoration="underline" color="yellow.300">
+              {" "}
+              templates/base.html.twig{" "}
+            </Text>
+            <br />
+            <Text>
+              !DOCTYPE html html head meta charset="UTF-8" title % block title
+              %Welcome!% endblock % /title % block stylesheets %
+              encore_entry_link_tags('app') % endblock % link
+              href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              rel="stylesheet" link
+              href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700"
+              link
+              href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+              rel="stylesheet" head body % block body %% endblock % % block
+              javascripts % encore_entry_script_tags('app') % endblock % body
+              html
+              <br />
+              <Text>Ejecutar el build del frontend: </Text>
+              yarn encore dev --watch Importante:
+              <br />
+              addEntry('app', './assets/app.js'): Es el entrypoint que le
+              decimos a webpack que queremos que nos empiece la aplicación. Es
+              donde nosotros renderizamos todo para despues pasarselo a un html.
+            </Text>
+            <br />
+            <Text> Ver en entrypoints y manifest.json</Text>
+
+            <Text>
+              Una vez que tenemos todo integrado, lo que debemos hacer es lo
+              siguiente:{" "}
+            </Text>
+            <Text>
+              Por un lado: - Seguir trabajando en la rama PRE-LOCAL (ya que acá
+              vemos los cambios en tiempo real)
+            </Text>
+            <br />
+            <Text>
+              {" "}
+              En segunda instancia, debemos ir mergeando de nuestra rama PRE
+              LOCAL de react a la rama LOCAL, donde ya
+            </Text>
+            <Text>tenemos nuestro proyecto integrado.</Text>
+            <Text>
+              Descubrimos una herramienta que nos sirvió de mucha ayuda, el
+              winMerge, en la cual, ibamos mergeando
+            </Text>
+            <Text>
+              {" "}
+              los cambios que considerábamos necesarios a nuestro proyecto
+            </Text>
+            <br />
+            <Text>
+              Una vez que teníamos los cambios hechos, debíamos correr el
+              siguiente comando:
+            </Text>
+            <br />
+            <Text> npm run build </Text>
+            <br />
+            <Text>
+              {" "}
+              En el entrypont y manifest.json ponemos la ruta total
+              nombredelproyecto/public/index.php
+            </Text>
+
+            <Text>
+              Esto compilará lo que viene de React (el js), y ahora sí, podemos
+              ver nuestros cambios reflejados en
+            </Text>
+            <Text> ...../..../public/index.php </Text>
+            <br />
+            <Text>
+              Una vez que tenemos el proyecto andando en LOCAL, cuando lo
+              pasemos a desarrollo,
+            </Text>
+            <br />
+            <Text>
+              debemos incluir en landing.html.twig: para que en desarrollo no
+              haya problemas con las rutas.{" "}
+            </Text>
+            <br />
+            <Text>
+              {" "}
+              METATAG: meta http-equiv="Content-Security-Policy"
+              content="upgrade-insecure-requests"/meta{" "}
+            </Text>
+            <br />
+            <br />
+            <Text> Eso es todo !</Text>
+          <br />
+          <Text> Gracias por pasar :)</Text>
+          <br />
+          <Text> Agus - Mati </Text>
           </CustomText>
+          <br />
+          <br />
+
+         
         </Box>
       </Box>
     </Box>
