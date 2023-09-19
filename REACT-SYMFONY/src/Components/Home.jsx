@@ -261,7 +261,10 @@ export default function Home() {
           </Text>
           <br />
           <br />
-          <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400"> ¿Cómo lo instalamos? </Text>
+          <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
+            {" "}
+            ¿Cómo lo instalamos?{" "}
+          </Text>
           <br />
           <Text> composer require friendsofsymfony/rest-bundle </Text>
           <br />
@@ -322,10 +325,9 @@ export default function Home() {
             <br />
             <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
               {" "}
-              En el controlador: 
+              En el controlador
             </Text>
-            <Text>(el cual debe devolver una
-              respuesta json) </Text>
+            <Text>(el cual debe devolver una respuesta json) </Text>
             <br />
             <Text>
               {" "}
@@ -526,7 +528,12 @@ export default function Home() {
               <br />
               <br />
               <br />
-              <Text fontSize="xl" fontWeight="bold" textDecoration="underline" color="cyan.400">
+              <Text
+                fontSize="xl"
+                fontWeight="bold"
+                textDecoration="underline"
+                color="cyan.400"
+              >
                 {" "}
                 EJEMPLOS:
               </Text>
@@ -539,7 +546,10 @@ export default function Home() {
               {" "}
             </Text>
             <br />
-            <Text fontSize="1.5rem" color="yellow.300"> Renderizando las Rutas de React: </Text>
+            <Text fontSize="1.5rem" color="yellow.300">
+              {" "}
+              Renderizando las Rutas de React:{" "}
+            </Text>
             <br />
             <Text fontSize="m" fontWeight="bold">
               {" "}
@@ -570,8 +580,8 @@ export default function Home() {
             </Text>
             <br />
             <br />
-            <Text textDecoration="underline" fontSize="1.5rem" color="cyan.400">
-              Así debemos hacer todas las rutas que tengamos en nuestro
+            <Text fontSize="1.5rem" color="cyan.400">
+              Así debemos tener todas las rutas que tengamos en nuestro
               proyecto:
             </Text>
 
@@ -671,7 +681,7 @@ export default function Home() {
             </Text>
             <br />
             <br />
-            <Text fontSize="2rem" textDecoration="underline" color="yellow.300" >
+            <Text fontSize="2rem" textDecoration="underline" color="yellow.300">
               {" "}
               Webpack.config{" "}
             </Text>
@@ -685,7 +695,11 @@ export default function Home() {
               LLAVE;
               <br />
               <br />
-              <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
+              <Text
+                fontSize="1.5rem"
+                textDecoration="underline"
+                color="cyan.400"
+              >
                 {" "}
                 Encore{" "}
               </Text>
@@ -695,14 +709,14 @@ export default function Home() {
                 Directorio donde se almacenarán los archivos compilados:{" "}
               </Text>
               <br />
-              <Text> .setOutputPath('public/build/'){" "} </Text>
+              <Text> .setOutputPath('public/build/') </Text>
             </Text>
             <br />
             <Text>
               Ruta pública utilizada por el servidor web para acceder al
               directorio de salida:
             </Text>
-<br />
+            <br />
             <Text> .setPublicPath('/symfony-react-wp/public/build') </Text>
             <Text> .enableReactPreset()</Text>
             <br />
@@ -712,7 +726,11 @@ export default function Home() {
             <br />
             <br />
             <Text>
-              <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
+              <Text
+                fontSize="1.5rem"
+                textDecoration="underline"
+                color="cyan.400"
+              >
                 {" "}
                 Entry Config{" "}
               </Text>
@@ -738,7 +756,11 @@ export default function Home() {
             <br />
             <br />
             <Text>
-              <Text fontSize="1.5rem" textDecoration="underline" color="cyan.400">
+              <Text
+                fontSize="1.5rem"
+                textDecoration="underline"
+                color="cyan.400"
+              >
                 {" "}
                 Feature Config{" "}
               </Text>
@@ -778,26 +800,53 @@ export default function Home() {
             </Text>
             <br />
             <br />
-            <Text fontSize="1.5rem" textDecoration="underline" color="yellow.300">
+            <Text
+              fontSize="1.5rem"
+              textDecoration="underline"
+              color="yellow.300"
+            >
               {" "}
               templates/base.html.twig{" "}
             </Text>
             <br />
             <Text>
-              !DOCTYPE html html head meta charset="UTF-8" title % block title
-              %Welcome!% endblock % /title % block stylesheets %
-              encore_entry_link_tags('app') % endblock % link
-              href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              rel="stylesheet" link
-              href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700"
-              link
-              href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
-              rel="stylesheet" head body % block body %% endblock % % block
-              javascripts % encore_entry_script_tags('app') % endblock % body
-              html
+              <Text>!DOCTYPE html </Text>
+              <Text> html </Text>
+              <Text> head </Text>
+              <Text>meta charset="UTF-8" </Text>
+              <Text> title % block title %Welcome!% endblock % title </Text>
+              <Text> % block stylesheets % </Text>
+              <Text> encore_entry_link_tags('app') </Text>
+              <Text>% endblock % </Text>
+              <Text>
+                link
+                href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                rel="stylesheet"
+              </Text>
+              <Text>
+                link
+                href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700"
+              </Text>
+              <Text>
+                link
+                href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+                rel="stylesheet"
+              </Text>
+              <Text>head</Text>
+              <Text>body</Text>
+              <Text>% block body %% endblock %</Text>
+              <Text>% block javascripts %</Text>
+              <Text> encore_entry_script_tags('app')</Text>
+              <Text>% endblock %</Text>
+              <Text>body</Text>
+              <Text>html</Text>
               <br />
-              <Text>Ejecutar el build del frontend: </Text>
-              yarn encore dev --watch Importante:
+              <br />
+              <Text fontSize="1.5rem" color="yellow.300">
+                Ejecutar el build del frontend{" "}
+              </Text>
+              <br />
+              <Text>yarn encore dev --watch Importante: </Text>
               <br />
               addEntry('app', './assets/app.js'): Es el entrypoint que le
               decimos a webpack que queremos que nos empiece la aplicación. Es
@@ -867,15 +916,13 @@ export default function Home() {
             <br />
             <br />
             <Text> Eso es todo !</Text>
-          <br />
-          <Text> Gracias por pasar :)</Text>
-          <br />
-          <Text> Agus - Mati </Text>
+            <br />
+            <Text> Gracias por pasar :)</Text>
+            <br />
+            <Text> Agus - Mati </Text>
           </CustomText>
           <br />
           <br />
-
-         
         </Box>
       </Box>
     </Box>
